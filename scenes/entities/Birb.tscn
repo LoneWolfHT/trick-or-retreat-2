@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/birb.aseprite" type="SpriteFrames" id=1]
+[ext_resource path="res://scenes/entities/Birb.gd" type="Script" id=2]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 14.0
+height = 44.0
+
+[node name="Birb" type="RigidBody2D" groups=[
+"birb",
+]]
+mode = 2
+gravity_scale = 0.0
+angular_damp = 1.0
+script = ExtResource( 2 )
+
+[node name="Anim" type="AnimatedSprite" parent="."]
+scale = Vector2( 10, 10 )
+frames = ExtResource( 1 )
+playing = true
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 10 )
+rotation = 1.5708
+shape = SubResource( 1 )
+
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
+position = Vector2( 0, 9 )
+scale = Vector2( 9, 2.7 )
+
+[connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_screen_exited"]

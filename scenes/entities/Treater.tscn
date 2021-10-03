@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/treater.png" type="Texture" id=1]
+[ext_resource path="res://scenes/entities/Treater.gd" type="Script" id=2]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 45.6946
+
+[node name="Treater" type="KinematicBody2D" groups=[
+"treater",
+]]
+script = ExtResource( 2 )
+
+[node name="Shape" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
+position = Vector2( 1.90735e-06, 1.90735e-06 )
+scale = Vector2( 15.6, 4.8 )
+
+[node name="Texture" type="Sprite" parent="."]
+rotation = 0.00243892
+scale = Vector2( 8, 8 )
+texture = ExtResource( 1 )
+
+[connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_screen_exited"]

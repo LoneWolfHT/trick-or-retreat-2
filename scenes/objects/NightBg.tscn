@@ -1,0 +1,30 @@
+[gd_scene format=2]
+
+[node name="NightBg" type="CanvasLayer"]
+layer = -128
+
+[node name="NightBg" type="ColorRect" parent="."]
+show_behind_parent = true
+margin_right = 1920.0
+margin_bottom = 1080.0
+color = Color( 0.00784314, 0.00784314, 0.0196078, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Stars" type="CPUParticles2D" parent="NightBg"]
+position = Vector2( 960, 540 )
+amount = 300
+lifetime = 69.0
+preprocess = 69.0
+randomness = 0.8
+fract_delta = false
+emission_shape = 2
+emission_rect_extents = Vector2( 960, 540 )
+direction = Vector2( 0, 1 )
+spread = 0.0
+gravity = Vector2( 0, 0 )
+scale_amount = 2.0
+scale_amount_random = 0.55
+color = Color( 1, 0.972549, 0.627451, 1 )
+hue_variation_random = 0.38

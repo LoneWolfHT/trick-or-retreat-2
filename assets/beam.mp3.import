@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/beam.mp3-7a030bbc86a3729469ed68713e185bac.mp3str"
+
+[deps]
+
+source_file="res://assets/beam.mp3"
+dest_files=[ "res://.import/beam.mp3-7a030bbc86a3729469ed68713e185bac.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

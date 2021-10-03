@@ -1,0 +1,48 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://scenes/entities/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/objects/CityBg.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/entities/Treater.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/Level1.gd" type="Script" id=4]
+[ext_resource path="res://scenes/entities/Birb.tscn" type="PackedScene" id=5]
+
+[sub_resource type="Curve2D" id=1]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 1794, 888, 0, 0, 0, 0, 1800, 414 )
+}
+
+[node name="Level1" type="Node2D"]
+script = ExtResource( 4 )
+TREATER_NODE = ExtResource( 3 )
+BIRB_NODE = ExtResource( 5 )
+
+[node name="CityBg" parent="." instance=ExtResource( 2 )]
+layer = -1
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 948, 1042 )
+
+[node name="Birb" type="Path2D" parent="."]
+curve = SubResource( 1 )
+
+[node name="Pos" type="PathFollow2D" parent="Birb"]
+position = Vector2( 1794, 696.017 )
+rotation = -1.5708
+offset = 191.857
+
+[node name="Spawner" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
+[node name="SpawnPos" type="Position2D" parent="Spawner"]
+position = Vector2( 0, 1042 )
+__meta__ = {
+"_gizmo_extents_": 1000.0
+}
+
+[node name="BirbTimer" type="Timer" parent="."]
+wait_time = 4.0
+autostart = true
+
+[connection signal="timeout" from="Spawner" to="." method="_on_Spawner_timeout"]
+[connection signal="timeout" from="BirbTimer" to="." method="moar_birbs"]

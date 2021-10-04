@@ -5,7 +5,7 @@ export var BIRB_MURDER_FINE = 18 + (3 * Settings.difficulty_mult)
 var SPEED = 666
 
 var immune = true
-var _DEAD = false
+var DEAD = false
 
 func _on_button_activate(_button):
 	Audio.stop("mainloop")
@@ -33,7 +33,7 @@ func die():
 	beam_off()
 	Audio.stop("mainloop")
 	Audio.play("death")
-	_DEAD = true
+	DEAD = true
 	$LockTimer.stop()
 	$Progress/Bar.visible = false
 	dead_rotation = true
@@ -58,7 +58,7 @@ func win():
 	beam_off()
 	Audio.stop("mainloop")
 	Audio.play("win")
-	_DEAD = true
+	DEAD = true
 	$Progress/Bar.visible = false
 	deadvel = Vector2(0, -SPEED)
 	$AnimationPlayer.stop(true)
@@ -76,7 +76,7 @@ func _ready():
 var deadvel
 var dead_rotation = false
 func _process(delta):
-	if _DEAD:
+	if DEAD:
 		var _pass = self.move_and_collide(deadvel * delta)
 
 		if dead_rotation:
@@ -124,13 +124,13 @@ func _process(delta):
 var beam_target = false
 func _on_BeamArea_entered(body):
 	if body.is_in_group("treater"):
-		if !_DEAD && !is_beam_on:
+		if !DEAD && !is_beam_on:
 			$LockTimer.start()
 			beam_on()
 			beam_target = body
 
 func _on_LockTimer_timeout():
-	if !_DEAD:
+	if !DEAD:
 		if !beam_target || !$BeamArea.overlaps_body(beam_target):
 			beam_off()
 			beam_target = false

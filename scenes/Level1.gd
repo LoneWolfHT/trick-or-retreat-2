@@ -13,6 +13,9 @@ func _ready():
 	rng.randomize()
 
 func _on_Spawner_timeout():
+	if $Player.DEAD:
+		return
+
 	var current_treaters = self.get_tree().get_nodes_in_group("treater").size()
 	var current_birbs = self.get_tree().get_nodes_in_group("birb").size()
 

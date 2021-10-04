@@ -9,7 +9,7 @@ func _on_button_activate(button):
 	Audio.stop("main_menu")
 
 	if button == "exit":
-		self.get_tree().free()
+		self.get_tree().quit()
 	elif button == "play_game":
 		# if Settings.showed_tutorial:
 		var _pass = get_tree().change_scene("res://scenes/Level1.tscn")

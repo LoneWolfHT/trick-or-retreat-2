@@ -5,26 +5,26 @@
 [ext_resource path="res://scenes/objects/TRButton.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/MainMenu.gd" type="Script" id=4]
 
-[sub_resource type="DynamicFont" id=3]
-size = 48
-outline_size = 3
-use_filter = true
-font_data = ExtResource( 2 )
-
-[sub_resource type="DynamicFont" id=4]
-size = 48
-outline_size = 3
-use_filter = true
-font_data = ExtResource( 2 )
-
 [sub_resource type="DynamicFont" id=1]
+size = 48
+outline_size = 3
+use_filter = true
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 48
+outline_size = 3
+use_filter = true
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=3]
 size = 34
 outline_size = 3
 use_filter = true
 extra_spacing_char = 1
 font_data = ExtResource( 2 )
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=4]
 size = 96
 outline_size = 3
 use_filter = true
@@ -43,7 +43,7 @@ margin_left = 1710.0
 margin_top = 336.0
 margin_right = 1896.0
 margin_bottom = 394.0
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 1, 0.678431, 0, 1 )
 custom_colors/font_outline_modulate = Color( 1, 0.235294, 0, 1 )
 text = "Volume"
@@ -74,7 +74,7 @@ margin_left = 18.0
 margin_top = 354.0
 margin_right = 243.0
 margin_bottom = 412.0
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 1, 0.678431, 0, 1 )
 custom_colors/font_outline_modulate = Color( 1, 0.235294, 0, 1 )
 text = "Difficulty"
@@ -107,7 +107,7 @@ margin_left = 108.0
 margin_top = 420.0
 margin_right = 670.0
 margin_bottom = 478.0
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 1, 0.678431, 0, 1 )
 custom_colors/font_outline_modulate = Color( 1, 0.235294, 0, 1 )
 text = "Trick"
@@ -123,7 +123,7 @@ margin_left = 48.0
 margin_top = 540.0
 margin_right = 610.0
 margin_bottom = 598.0
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 1, 0.678431, 0, 1 )
 custom_colors/font_outline_modulate = Color( 1, 0.235294, 0, 1 )
 text = "Trick and maybe Treat"
@@ -140,7 +140,7 @@ margin_left = 72.0
 margin_top = 768.0
 margin_right = 453.0
 margin_bottom = 826.0
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 1, 0.678431, 0, 1 )
 custom_colors/font_outline_modulate = Color( 1, 0.235294, 0, 1 )
 text = "Trick and Treat"
@@ -157,7 +157,7 @@ margin_left = 96.0
 margin_top = 1002.0
 margin_right = 351.0
 margin_bottom = 1060.0
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 1, 0.678431, 0, 1 )
 custom_colors/font_outline_modulate = Color( 1, 0.235294, 0, 1 )
 text = "Treat only"
@@ -171,7 +171,7 @@ __meta__ = {
 margin_top = 96.0
 margin_right = 1920.0
 margin_bottom = 1080.0
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 1, 0.678431, 0, 1 )
 custom_colors/font_outline_modulate = Color( 1, 0.235294, 0, 1 )
 text = "Trick Or Retreat II"

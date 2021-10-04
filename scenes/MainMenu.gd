@@ -12,7 +12,7 @@ func _on_button_activate(button):
 		self.get_tree().free()
 	elif button == "play_game":
 		# if Settings.showed_tutorial:
-		get_tree().change_scene("res://scenes/Level1.tscn")
+		var _pass = get_tree().change_scene("res://scenes/Level1.tscn")
 		# else:
 		# 	Settings.showed_tutorial = true
 		# 	get_tree().change_scene("res://scenes/Tutorial.tscn")

@@ -9,10 +9,10 @@ func _ready():
 	if typeof(signal_target) == TYPE_NODE_PATH:
 		signal_target = get_node(signal_target)
 
-	self.connect("button_up", signal_target, "_on_button_activate", [ button_name ])
+	var _pass = self.connect("button_up", signal_target, "_on_button_activate", [ button_name ])
 
 	if load_scene:
-		self.connect("button_up", self, "_on_loadscene_request", [ load_scene ])
+		_pass = self.connect("button_up", self, "_on_loadscene_request", [ load_scene ])
 
 	print("[util->buttonpress]: Loaded")
 
@@ -20,4 +20,4 @@ func _on_button_activate(button):
 	print("button default booped: ", button)
 
 func _on_loadscene_request(scenepath):
-	get_tree().change_scene(scenepath)
+	var _pass = get_tree().change_scene(scenepath)
